@@ -1,0 +1,21 @@
+<div class="album">
+  <div class="container">
+    <div class="row">
+      <% movies.each do |movie| %>
+        <div class="col">
+          <div class="card">
+            <div class="card-body">
+              <h3 class="card-title"><%= movie.name %></h3>
+              <% if movie.description.present? %>
+                <p class="card-text"><%= truncate(movie.description, length: 100) %></p>
+              <% end %>
+              <div class="mt-auto">
+                <small class="text-muted">Released <%= time_ago_in_words(movie.year) %> ago</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
